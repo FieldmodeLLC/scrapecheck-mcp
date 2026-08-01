@@ -1,0 +1,16 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "io.github.FieldmodeLLC/scrapecheck",
+  "description": "Verify scraped data against the live source page. Signed verdicts, $0.01 via x402.",
+  "repository": {
+    "url": "https://github.com/FieldmodeLLC/scrapecheck-mcp",
+    "source": "github"
+  },
+  "version": "0.2.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://scrapecheck-mcp.fly.dev/mcp"
+    }
+  ]
+}
