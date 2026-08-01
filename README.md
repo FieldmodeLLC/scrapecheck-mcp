@@ -69,6 +69,24 @@ you are charged only for completed work.
   [Scrape QA Apify actor](https://apify.com/doting_grouper/scrape-qa) for
   batch dataset verification. One engine, one signing key, one durable log.
 
+## Verify a verdict yourself (offline)
+
+This repo ships a zero-dependency verifier — check any ScrapeCheck verdict
+without trusting us, the transport, or this server:
+
+```bash
+node tools/verify-verdict.mjs examples/verdict.json --pubkey key.json
+```
+
+Omit `--pubkey` to fetch the current key from
+[`/pubkey`](https://scrapecheck.fly.dev/pubkey); pass it (an `ed25519:…`
+string or a saved `/pubkey` response) to verify fully offline.
+[`examples/verdict.json`](examples/verdict.json) is a real production verdict
+— alter any field and verification fails. A verdict is valid iff its ed25519
+signature verifies over the canonical (recursively key-sorted) JSON of every
+field except `signature`. MIT licensed — vendor the ~40 relevant lines into
+your own pipeline freely.
+
 ## About this repository
 
 This repo contains the thin MCP storefront only — transport, payment
