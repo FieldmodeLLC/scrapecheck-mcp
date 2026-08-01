@@ -43,6 +43,10 @@ at [`/pubkey`](https://scrapecheck.fly.dev/pubkey) and in-band via
 exactly which prompt+calibration produced it. Verify offline — no need to
 trust the transport, the storefront, or us.
 
+Live, unfiltered run stats — misses included:
+[scrapecheck.fly.dev/stats](https://scrapecheck.fly.dev/stats). A verifier
+that only shows its passes isn't showing anything.
+
 ## Payment flow (x402 in-band)
 
 Standard `@x402/mcp` v2 flow: an unpaid call past the free allowance returns
