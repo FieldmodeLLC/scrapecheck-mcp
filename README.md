@@ -70,7 +70,7 @@ you are charged only for completed work.
   returns `unverifiable` — never a false `fail`, never a false `pass`.
 - The same engine is also sold as a raw x402 HTTP API
   (`https://scrapecheck.fly.dev/verify`) and as the
-  [Scrape QA Apify actor](https://apify.com/doting_grouper/scrape-qa) for
+  [Scrape QA Apify actor](https://apify.com/fieldmodellc/scrape-qa) for
   batch dataset verification. One engine, one signing key, one durable log.
 
 ## Verify a verdict yourself (offline)
