@@ -1,0 +1,34 @@
+# ScrapeCheck MCP storefront — separate tiny app (MCP_STOREFRONT_SPEC §4):
+# keeps the origin's blast radius smallest (a storefront crash cannot touch
+# the paid HTTP rail or the SQLite volume). Secrets: SERVICE_API_KEY,
+# CDP_API_KEY_ID, CDP_API_KEY_SECRET (same names as the origin, no new
+# patterns). No volume — the storefront is stateless; the durable log lives
+# at the origin.
+app = "scrapecheck-mcp"
+primary_region = "iad"
+
+[build]
+
+[env]
+  SCRAPECHECK_ORIGIN = "https://scrapecheck.fly.dev"
+  X402_NETWORK = "base"
+  PAYOUT_WALLET_ADDRESS = "0x455F20eC147477CAFcd6D77C1604529f3c4Ff665"
+  MCP_PORT = "3402"
+
+[http_service]
+  internal_port = 3402
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+
+  [[http_service.checks]]
+    interval = "30s"
+    timeout = "5s"
+    grace_period = "10s"
+    method = "GET"
+    path = "/healthz"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "512mb"
