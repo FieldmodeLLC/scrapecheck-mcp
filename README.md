@@ -10,6 +10,9 @@ page itself** and returns an ed25519-signed verdict: `pass`, `fail`, or
 **Payment:** x402 in-band (USDC on Base) — no API key, no signup. A free
 allowance per client identity is served before payment is required.
 
+**Check us yourself — the three things you can attack:**
+[verify any verdict offline](#verify-a-verdict-yourself-offline) · [live run stats, misses included](https://scrapecheck.fly.dev/stats) · [the benchmark and its limits](#the-trust-guarantee-is-structural-not-statistical)
+
 ## Tools
 
 | Tool | Price | What it certifies |
@@ -78,8 +81,23 @@ you are charged only for completed work.
 This repo ships a zero-dependency verifier — check any ScrapeCheck verdict
 without trusting us, the transport, or this server:
 
-```bash
-node tools/verify-verdict.mjs examples/verdict.json --pubkey key.json
+```console
+$ node tools/verify-verdict.mjs examples/verdict.json
+(public key fetched from https://scrapecheck.fly.dev/pubkey — pass --pubkey to verify fully offline)
+VALID: signature verifies against the public key
+  verdict:    pass (confidence 0.97)
+  verdict_id: 7af5f1df-1b86-42a5-a784-9b302a55f94e
+  check_type: web_field_v1
+  engine:     web_field_v1/0.2.0+2ae28205cac4
+$ echo $?
+0
+
+# flip a single field — "verdict": "pass" -> "fail" — and run it again
+$ node tools/verify-verdict.mjs tampered.json
+(public key fetched from https://scrapecheck.fly.dev/pubkey — pass --pubkey to verify fully offline)
+INVALID: signature does not verify — the verdict was altered or was not signed by this key
+$ echo $?
+1
 ```
 
 Omit `--pubkey` to fetch the current key from
