@@ -1,14 +1,14 @@
 {
-  "verdict_id": "06743e55-8751-46ca-9bae-cd1c0ba22f08",
+  "verdict_id": "7af5f1df-1b86-42a5-a784-9b302a55f94e",
   "verdict": "pass",
   "confidence": 0.97,
   "reasons": [
     "claimed price �51.77 found in re-fetched page; page shows \"in stock\"",
     "page served live (no strong stale-cache signal)",
-    "The claimed price of £51.77 and in_stock status of true both match the ground-truth excerpt which shows '£51.77' and 'In stock (22 available)'"
+    "The claimed price of £51.77 matches the ground truth, and the in_stock status of true correctly reflects that the item is 'In stock (22 available)'."
   ],
   "evidence": {
-    "refetched_at": "2026-08-06T19:30:49.070Z",
+    "refetched_at": "2026-08-01T18:28:05.189Z",
     "refetch_excerpt": "…to Scrape - Sandbox Books to Scrape We love being scraped! Home Books Poetry A Light in the Attic A Light in the Attic £51.77 In stock (22 available) Warning! This is a demo website for web scraping purposes. Prices and ratings here were ra…",
     "lens_votes": {
       "is_real": true,
@@ -18,5 +18,5 @@
   },
   "check_type": "web_field_v1",
   "engine": "web_field_v1/0.2.0+2ae28205cac4",
-  "signature": "ed25519:5gZb1DZlfbXcv8TaltXLJbaTLwvRIzhPNXjvwNrWD6fAALuqaQZ7InG9O0Pz3eFgNTLw88ImlnrGfaRBB+WWDg=="
+  "signature": "ed25519:OGexCbTS/K6guHMc5bGO7KsxIAlk931lApsM5zrnLSCgT2fNwBtgyLz4OYm7D7N8A5MYxqDy3znrTg6chx6JDw=="
 }

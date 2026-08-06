@@ -109,6 +109,60 @@ signature verifies over the canonical (recursively key-sorted) JSON of every
 field except `signature`. MIT licensed — vendor the ~40 relevant lines into
 your own pipeline freely.
 
+## Key rotation, August 2026
+
+On 6 August 2026 the ed25519 signing key was treated as exposed: an operator
+error placed a credentials file into an external chat channel. Under our own
+doctrine — a key that has touched an untrusted channel is compromised whether
+or not anyone used it — the key was rotated the same day.
+
+No verdict was affected. Signatures cover the verdict payload, so verdicts
+issued before the rotation are unchanged and still verify against the retired
+key, which is published permanently as `k1` at
+[`/pubkey`](https://scrapecheck.fly.dev/pubkey). Verdicts issued afterwards are
+signed with `k2`. The offline verifier tries every published key and reports
+which one matched.
+
+**If you hold a verdict signed by `k1`, confirm it.** A valid signature from a
+retired key proves that key signed the verdict — not that we issued it, because
+anyone holding the exposed private key can sign anything, including a forgery
+that reuses a real verdict_id. So we publish an issuance record:
+
+    GET https://scrapecheck.fly.dev/verdicts/<verdict_id>
+
+It returns whether we issued that id and, where available, `signature_sha256`
+— the SHA-256 of the signature we issued under it. ed25519 is deterministic,
+so hashing the signature on your copy and comparing binds your verdict's exact
+content to ours. Match means it is the verdict we issued — the same signed
+content. Mismatch means forged content under a real id. The endpoint returns no verdict content, no
+client data, and nothing enumerable. Running the verifier without `--pubkey`
+performs this check for you automatically on any `k1`-signed verdict.
+
+**One honest limitation.** Signature hashes were not logged before 6 August
+2026, so for most pre-rotation verdicts we can confirm issuance but cannot bind
+content; those return `content_binding: "unavailable_legacy"`, and the verifier
+reports `PARTIAL` rather than confirming. Where we can bind a pre-rotation
+verdict from an artifact published before the exposure — the example verdict in
+this repository, whose signature is fixed in public git history that no forger
+can rewrite — the record says so and labels the provenance. Bindings recovered
+from artifacts we merely retained privately are labeled
+`available_backfilled`, because a binding is only as good as the provenance of
+the artifact behind it. Every pre-rotation verdict was issued to ourselves; no
+external customer holds one.
+
+**A commitment that follows.** Because the issuance record is public, a logged
+verdict can never be deleted. Reporting `issued: false` about a verdict we
+really signed would be a lie about our own history, so retention is now part of
+the trust contract rather than an operational preference.
+
+What the exposure meant: a holder of the old private key could produce forged
+verdicts that verify against the old public key. They could not alter any
+verdict already issued, and the key gave no access to the service, its logs, or
+any funds. No forged verdict has been observed.
+
+This is the procedure working as designed, and it is written down here because
+a verifier that hides its own incidents is not a verifier.
+
 ## About this repository
 
 This repo contains the thin MCP storefront only — transport, payment
