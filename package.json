@@ -6,7 +6,6 @@
   "description": "ScrapeCheck MCP storefront — signed verification of scraped web data as MCP tools (thin proxy over the ScrapeCheck origin).",
   "scripts": {
     "start": "tsx src/main.ts",
-    "test": "vitest run",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -20,10 +19,7 @@
     "zod": "^3.25.0"
   },
   "devDependencies": {
-    "@hono/node-server": "^2.0.12",
-    "hono": "^4.12.33",
-    "typescript": "^5.6.0",
-    "viem": "^2.55.10",
-    "vitest": "^2.1.0"
+    "@types/node": "^26.1.2",
+    "typescript": "^5.6.0"
   }
 }
