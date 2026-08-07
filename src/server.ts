@@ -64,14 +64,31 @@ const verdictOutputSchema = z
   })
   .passthrough();
 
-// Tool descriptions are listing copy (SPEC §3): structural guarantee first,
-// scope stated, presence leads with what it does NOT do. Reviewer wording
-// pass happens at M3 before registry publication.
-const DESCRIPTIONS = {
-  verify_web_field: `Verify a scraped claim against the live source page and get back an ed25519-signed verdict: "pass", "fail", or "unverifiable". ScrapeCheck independently re-fetches the URL itself, confirms the claimed value is actually present and served live (not a stale cache), and an independent LLM judge confirms the value answers what was asked. The guarantee is structural, not statistical: a claim is never certified unless the re-fetched page contains it, AND a judge's vote is mechanically voided if its restatement of the claim doesn't match what was actually claimed — absence cannot pass, substitution cannot pass, and anything unconfirmed returns "unverifiable", never "pass". Every verdict carries a stable verdict_id, the engine digest that produced it, and a signature verifiable offline against the public key (see get_verifier_info). Scope: server-rendered pages; client-rendered (JS-only) content returns "unverifiable". $0.01 per call via x402.`,
-  verify_presence: `Presence check only — this does NOT confirm the value is the right answer to what was asked, and its positive verdict is "present", never "pass". It confirms the claimed value appears on the live source page: ScrapeCheck independently re-fetches the URL and checks the value is present and served live, with no LLM judge. Published accuracy numbers apply to full verification (verify_web_field) only. Returns a signed verdict ("present", "fail", or "unverifiable") with check_type "web_field_presence_v1". Scope: server-rendered pages. $0.002 per call via x402.`,
-  get_verifier_info: `Free trust artifact: the evidence for deciding whether to trust ScrapeCheck's verdicts, in-band. Returns the ed25519 public key every verdict signature verifies against, the benchmark summary with honest small-N labels, the scope statement, and service endpoints. Verdicts are signed over canonical sorted-key JSON of all fields except "signature".`,
+// Tool descriptions are listing copy — situation-first, negative signal
+// early, reviewer-passed line-by-line (agent-facing brief, 2026-08-06).
+export const DESCRIPTIONS = {
+  verify_web_field: `Checks whether a value you did not fetch yourself is actually on the source page right now, and returns a signed pass/fail/unverifiable verdict. Not a retrieval tool: it checks a value you already have, it does not find data for you. Use it when you hold a value that came from somewhere else (a search result, a scraper, an upstream API, another agent) and you need to know it is on the source page before you act on it. Takes the URL, the claimed value, and what was asked; it independently re-fetches the page and never trusts the fetch you were given. Structural guarantee: a claim is never certified unless the re-fetched page contains it, and the model judge can only veto a pass, never create one. Anything unconfirmed returns unverifiable, never pass. Every verdict carries a stable verdict_id, the engine digest that produced it, and a signature verifiable offline against the public key (see get_verifier_info). Scope: server-rendered pages; JS-only content returns unverifiable rather than a guess. $0.01 per check, first 100 free, paid in-band via x402.`,
+  verify_presence: `Presence only: confirms the value appears on the page, NOT that it is the right answer to what was asked. Never returns pass. A was-price, a different variant's price, a shipping cost, or a tax figure can all satisfy presence. Verdicts are present, fail, or unverifiable, signed, with check_type web_field_presence_v1. Use it as a cheap screen before a full check, or when you already know what the value means and only need to confirm it still appears on the page. If your decision depends on the value being the right value, call verify_web_field instead. Scope: server-rendered pages. $0.002 per check, paid in-band via x402.`,
+  get_verifier_info: `Free. Returns the public key, engine version, benchmark summary with sample-size labels, and scope, so you can verify any verdict offline. Call this first if your selection policy requires evidence before trusting a verification provider: every verdict this service issues verifies offline against the returned key, so you do not have to trust the service at runtime to rely on its output.`,
 } as const;
+
+/**
+ * Sentence-boundary truncation for short surfaces (the 402 challenge's
+ * resource.description). An arbitrary character slice through a guarantee
+ * can leave a claim standing without its qualifier — mid-word cuts published
+ * an overclaim risk on a payment surface. This emits only complete
+ * sentences within the cap. Pinned by test; truncation is not authorship.
+ */
+export function truncateAtSentenceBoundary(text: string, cap = 300): string {
+  if (text.length <= cap) return text;
+  for (let i = cap; i > 0; i--) {
+    const ch = text[i - 1];
+    if ((ch === "." || ch === "!" || ch === "?") && (i >= text.length || text[i] === " ")) {
+      return text.slice(0, i);
+    }
+  }
+  return text.slice(0, cap); // unreachable for our copy; pinned by test
+}
 
 // From the reviewer-approved README (full-verification only; small-N labels
 // are part of the claim and must travel with the numbers).
@@ -155,7 +172,7 @@ export async function buildMcpServer(deps: McpDeps): Promise<McpServer> {
         accepts,
         resource: {
           url: `mcp://tool/${name}`,
-          description: DESCRIPTIONS[name].slice(0, 160),
+          description: truncateAtSentenceBoundary(DESCRIPTIONS[name], 300),
           serviceName: "ScrapeCheck",
           tags: ["verification", "scraping", "data-quality", "signed-verdicts"],
         },
@@ -165,7 +182,7 @@ export async function buildMcpServer(deps: McpDeps): Promise<McpServer> {
         extensions: {
           ...declareDiscoveryExtension({
             toolName: name,
-            description: DESCRIPTIONS[name].slice(0, 300),
+            description: truncateAtSentenceBoundary(DESCRIPTIONS[name], 300),
             inputSchema: {
               type: "object",
               properties: {
@@ -224,6 +241,17 @@ export async function buildMcpServer(deps: McpDeps): Promise<McpServer> {
         description: DESCRIPTIONS[name],
         inputSchema: verifyInputShape,
         outputSchema: verdictOutputSchema.shape,
+        // MCP tool annotations (all four hints, honestly set):
+        // - readOnly: verification never modifies anything the caller owns
+        // - not idempotent BY DESIGN: the live page can change between calls,
+        //   so two identical calls can honestly return different verdicts
+        // - openWorld: each call re-fetches an arbitrary public web page
+        annotations: {
+          readOnlyHint: true,
+          destructiveHint: false,
+          idempotentHint: false,
+          openWorldHint: true,
+        },
       },
       (async (args: VerifyArgs, extra: { _meta?: Record<string, unknown> } | undefined) => {
         const hasPayment = extra?._meta?.[MCP_PAYMENT_META_KEY] != null;
@@ -256,14 +284,38 @@ export async function buildMcpServer(deps: McpDeps): Promise<McpServer> {
       title: "Verifier trust info (free)",
       description: DESCRIPTIONS.get_verifier_info,
       inputSchema: {},
+      // Idempotent: same trust artifact modulo the live health bit; closed
+      // world: only ever talks to our own origin, never the open web.
+      annotations: {
+        readOnlyHint: true,
+        destructiveHint: false,
+        idempotentHint: true,
+        openWorldHint: false,
+      },
     },
     async () => {
-      const [pubkeyRes, healthRes] = await Promise.all([
-        doFetch(`${deps.origin}/pubkey`).then((r) => r.json() as Promise<Record<string, unknown>>),
-        doFetch(`${deps.origin}/healthz`)
-          .then((r) => r.json() as Promise<Record<string, unknown>>)
-          .catch(() => ({ ok: false as const })),
-      ]);
+      // Guarded: an origin outage must surface as a clean tool error, not an
+      // unhandled rejection bubbling up as a raw MCP failure.
+      let pubkeyRes: Record<string, unknown>;
+      let healthRes: Record<string, unknown>;
+      try {
+        [pubkeyRes, healthRes] = await Promise.all([
+          doFetch(`${deps.origin}/pubkey`).then((r) => r.json() as Promise<Record<string, unknown>>),
+          doFetch(`${deps.origin}/healthz`)
+            .then((r) => r.json() as Promise<Record<string, unknown>>)
+            .catch(() => ({ ok: false as const })),
+        ]);
+      } catch (e) {
+        return {
+          content: [
+            {
+              type: "text" as const,
+              text: `origin unreachable: ${e instanceof Error ? e.message : String(e)}. The public key is also served at ${deps.origin}/pubkey.`,
+            },
+          ],
+          isError: true,
+        };
+      }
       const info = {
         service: "ScrapeCheck",
         ...pubkeyRes, // { algorithm, public_key }
