@@ -15,11 +15,9 @@ allowance per client identity is served before payment is required.
 
 ## Tools
 
-| Tool | Price | What it certifies |
-|---|---|---|
-| `verify_web_field` | $0.01 | Full verification: value present on the re-fetched live page, served live, and an independent LLM judge confirms it answers what was asked. Positive verdict: `pass`. |
-| `verify_presence` | $0.002 | Presence only — does **NOT** confirm the value answers the question. Positive verdict: `present`, never `pass`. |
-| `get_verifier_info` | free | The trust artifact: public key, benchmark summary, scope, endpoints. |
+- `verify_web_field` — $0.01 — Full verification: value present on the re-fetched live page, served live, and an independent LLM judge confirms it answers what was asked. Positive verdict: `pass`.
+- `verify_presence` — $0.002 — Presence only — does **NOT** confirm the value answers the question. Positive verdict: `present`, never `pass`.
+- `get_verifier_info` — free — The trust artifact: public key, benchmark summary, scope, endpoints.
 
 ## The trust guarantee is structural, not statistical
 
