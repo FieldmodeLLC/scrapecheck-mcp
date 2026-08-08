@@ -107,6 +107,23 @@ signature verifies over the canonical (recursively key-sorted) JSON of every
 field except `signature`. MIT licensed — vendor the ~40 relevant lines into
 your own pipeline freely.
 
+### Envelope fields added August 2026
+
+New verdicts carry three additional signed fields. `key_id` names which key
+in the /pubkey archive signed the verdict; it is advisory — the signature
+either verifies against a published key or it doesn't — and a mismatch
+between the claim and the verifying key is surfaced as a warning.
+`verifier_url` is the canonical origin for /pubkey and /verdicts lookups;
+it is a pointer home, never a trust root — a verifier must not fetch keys
+from a URL the document itself supplies, so ours pins the known origin and
+uses the embedded value only for display and mismatch warnings.
+`source_hash` is the SHA-256 of the normalized page text the verdict
+actually judged, a fingerprint of the page state at refetched_at. Hash
+equality is meaningful between verdicts carrying the same engine digest;
+across digests it is best-effort only, and today it is comparable
+verdict-to-verdict rather than independently recomputable. Verdicts issued
+before these fields existed verify exactly as before.
+
 ## Key rotation, August 2026
 
 On 6 August 2026 the ed25519 signing key was treated as exposed: an operator

@@ -91,6 +91,14 @@ const payloadBytes = Buffer.from(canonicalJson(payload), "utf-8");
 const sigBytes = Buffer.from(sig.slice(8), "base64");
 
 let matched = null;
+// key_id fast path: try the envelope's claimed key first (order only —
+// every published key is still tried, so a false claim changes nothing).
+if (typeof verdict.key_id === "string") {
+  candidates = [
+    ...candidates.filter((c) => c.id === verdict.key_id),
+    ...candidates.filter((c) => c.id !== verdict.key_id),
+  ];
+}
 for (const cand of candidates) {
   const pk = cand.public_key;
   if (typeof pk !== "string" || !pk.startsWith("ed25519:")) continue;
@@ -119,6 +127,29 @@ console.log(`  verdict:    ${verdict.verdict} (confidence ${verdict.confidence})
 console.log(`  verdict_id: ${verdict.verdict_id}`);
 console.log(`  check_type: ${verdict.check_type}`);
 console.log(`  engine:     ${verdict.engine ?? "(none)"}`);
+// Envelope v2 fields (additive, 2026-08): displayed when present; old
+// verdicts produce byte-identical output to before.
+if (verdict.key_id !== undefined) {
+  if (verdict.key_id === matched.id) {
+    console.log(`  key_id:     ${verdict.key_id} (envelope claim matches the verifying key)`);
+  } else {
+    console.log(`  WARNING:    envelope claims key_id ${verdict.key_id} but the signature verifies under ${matched.id} — inconsistent envelope; bug or forgery, treat with care.`);
+  }
+}
+if (verdict.verifier_url !== undefined) {
+  if (verdict.verifier_url === new URL(PUBKEY_URL).origin) {
+    console.log(`  issuer:     ${verdict.verifier_url} (embedded pointer; keys were checked against the pinned origin, never the embedded URL)`);
+  } else {
+    console.log(`  WARNING:    embedded verifier_url differs from this verifier's pinned origin — the document does not choose its judge; shown for information only. (embedded: ${verdict.verifier_url})`);
+  }
+}
+if (verdict.source_hash !== undefined) {
+  if (verdict.source_hash === null) {
+    console.log(`  source_hash: null (no page content was fetched for this verdict — SAFE_MODE or anchor failure; the envelope states this rather than omitting the field)`);
+  } else {
+    console.log(`  source_hash: ${verdict.source_hash} — fingerprint of the normalized page text this verdict judged. Comparable between verdicts with the same engine digest; not independently recomputable today.`);
+  }
+}
 if (matched.status === "retired") {
   // A signature alone cannot establish authenticity for a key whose private
   // half was exposed: anyone holding it can mint verdicts that verify here,
