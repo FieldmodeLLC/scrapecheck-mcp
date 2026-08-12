@@ -59,6 +59,17 @@ try {
   fail("input is not valid JSON");
 }
 
+// Accept a dataset row as well as a bare verdict. Rows from the Apify Actor
+// carry the complete signed envelope under `signed_verdict`, alongside flat
+// columns the Actor assembled itself — those extra columns are NOT covered by
+// the signature, so verifying the row as-is would fail confusingly. Unwrap it
+// and say so, rather than making the reader work out why their first attempt
+// looked like a forgery.
+if (verdict && typeof verdict.signed_verdict === "object" && verdict.signed_verdict !== null) {
+  console.log("(input looks like a dataset row: verifying its signed_verdict envelope, which is the object the signature covers)");
+  verdict = verdict.signed_verdict;
+}
+
 let pubkey;
 const flag = args.indexOf("--pubkey");
 // Candidate keys to check. /pubkey publishes an ARCHIVE (active + retired),
@@ -132,6 +143,10 @@ console.log(`  engine:     ${verdict.engine ?? "(none)"}`);
 // Only cross-check when the matching key has a real published id. With
 // --pubkey the caller supplied a bare key, so there is no id to compare
 // against and a "mismatch" would be a false alarm about their own key.
+// Silence would be safe; saying why the check didn't run is better.
+if (verdict.key_id !== undefined && matched.status === "supplied") {
+  console.log(`  key_id:     ${verdict.key_id} (envelope's claim; you supplied a key directly, so no cross-check was performed)`);
+}
 if (verdict.key_id !== undefined && matched.status !== "supplied") {
   if (verdict.key_id === matched.id) {
     console.log(`  key_id:     ${verdict.key_id} (envelope claim matches the verifying key)`);
