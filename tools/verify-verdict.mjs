@@ -129,7 +129,10 @@ console.log(`  check_type: ${verdict.check_type}`);
 console.log(`  engine:     ${verdict.engine ?? "(none)"}`);
 // Envelope v2 fields (additive, 2026-08): displayed when present; old
 // verdicts produce byte-identical output to before.
-if (verdict.key_id !== undefined) {
+// Only cross-check when the matching key has a real published id. With
+// --pubkey the caller supplied a bare key, so there is no id to compare
+// against and a "mismatch" would be a false alarm about their own key.
+if (verdict.key_id !== undefined && matched.status !== "supplied") {
   if (verdict.key_id === matched.id) {
     console.log(`  key_id:     ${verdict.key_id} (envelope claim matches the verifying key)`);
   } else {
