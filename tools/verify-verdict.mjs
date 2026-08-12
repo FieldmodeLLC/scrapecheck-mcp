@@ -59,41 +59,92 @@ try {
   fail("input is not valid JSON");
 }
 
-// Accept a dataset row as well as a bare verdict. Rows from the Apify Actor
-// carry the complete signed envelope under `signed_verdict`, alongside flat
-// columns the Actor assembled itself — those extra columns are NOT covered by
-// the signature, so verifying the row as-is would fail confusingly. Unwrap it
-// and say so, rather than making the reader work out why their first attempt
-// looked like a forgery.
-if (verdict && typeof verdict.signed_verdict === "object" && verdict.signed_verdict !== null) {
-  console.log("(input looks like a dataset row: verifying its signed_verdict envelope, which is the object the signature covers)");
-  verdict = verdict.signed_verdict;
-}
-
-let pubkey;
 const flag = args.indexOf("--pubkey");
-// Candidate keys to check. /pubkey publishes an ARCHIVE (active + retired),
-// so a verdict signed before a key rotation still verifies without the
-// holder knowing a rotation happened. Explicit --pubkey checks only that key.
-let candidates = [];
-if (flag !== -1 && args[flag + 1]) {
-  const v = args[flag + 1];
-  if (v.startsWith("ed25519:")) candidates = [{ id: "(supplied)", public_key: v, status: "supplied" }];
-  else {
+
+/**
+ * Candidate keys to check. /pubkey publishes an ARCHIVE (active + retired),
+ * so a verdict signed before a key rotation still verifies without the holder
+ * knowing a rotation happened. Explicit --pubkey checks only that key.
+ */
+async function loadCandidates() {
+  if (flag !== -1 && args[flag + 1]) {
+    const v = args[flag + 1];
+    if (v.startsWith("ed25519:")) return [{ id: "(supplied)", public_key: v, status: "supplied" }];
     const body = JSON.parse(readFileSync(v, "utf-8"));
-    candidates = Array.isArray(body.keys) && body.keys.length
+    return Array.isArray(body.keys) && body.keys.length
       ? body.keys
       : [{ id: "(file)", public_key: body.public_key ?? body, status: "supplied" }];
   }
-} else {
   const body = await (await fetch(PUBKEY_URL)).json();
-  candidates = Array.isArray(body.keys) && body.keys.length
+  const keys = Array.isArray(body.keys) && body.keys.length
     ? body.keys
     : [{ id: "(scalar)", public_key: body.public_key, status: "active" }];
   console.log(
-    `(${candidates.length} key${candidates.length === 1 ? "" : "s"} fetched from ${PUBKEY_URL} — pass --pubkey to verify fully offline)`,
+    `(${keys.length} key${keys.length === 1 ? "" : "s"} fetched from ${PUBKEY_URL} — pass --pubkey to verify fully offline)`,
   );
+  return keys;
 }
+
+/**
+ * Unwrap a dataset row. Rows from the Apify Actor carry the complete signed
+ * envelope under `signed_verdict`, alongside flat columns the Actor
+ * assembled itself. Those extra columns are NOT covered by the signature, so
+ * verifying a row as-is would fail confusingly. Unwrap it and say so, rather
+ * than making the reader work out why their first attempt looked like a
+ * forgery.
+ */
+function unwrap(input) {
+  if (input && typeof input.signed_verdict === "object" && input.signed_verdict !== null) {
+    return { envelope: input.signed_verdict, unwrapped: true };
+  }
+  return { envelope: input, unwrapped: false };
+}
+
+// The Apify dataset API returns an ARRAY of rows, which is what a customer
+// pipes in when they verify a delivery. Verify every row, compactly, and fail
+// if any single one does not check out.
+if (Array.isArray(verdict)) {
+  const keys = await loadCandidates();
+  let bad = 0;
+  console.log(`(input is an array of ${verdict.length} row${verdict.length === 1 ? "" : "s"}: verifying each)`);
+  verdict.forEach((rowOrVerdict, i) => {
+    const { envelope, unwrapped } = unwrap(rowOrVerdict);
+    const sigStr = envelope?.signature;
+    if (typeof sigStr !== "string" || !sigStr.startsWith("ed25519:")) {
+      console.log(`  [${i}] NO SIGNATURE   ${unwrapped ? "(row had signed_verdict but no signature inside)" : "(no signed_verdict and no signature)"}`);
+      bad++;
+      return;
+    }
+    const { signature: _drop, ...payload } = envelope;
+    const bytes = Buffer.from(canonicalJson(payload), "utf-8");
+    const sig = Buffer.from(sigStr.slice(8), "base64");
+    const hit = keys.find((cand) => {
+      if (typeof cand.public_key !== "string" || !cand.public_key.startsWith("ed25519:")) return false;
+      try {
+        const k = createPublicKey({ key: Buffer.from(cand.public_key.slice(8), "base64"), format: "der", type: "spki" });
+        return edVerify(null, bytes, k, sig);
+      } catch { return false; }
+    });
+    if (hit) {
+      console.log(`  [${i}] VALID   ${String(envelope.verdict).padEnd(12)} key ${hit.id}   ${envelope.verdict_id ?? ""}`);
+    } else {
+      console.log(`  [${i}] INVALID ${String(envelope.verdict).padEnd(12)} signature does not verify against any published key`);
+      bad++;
+    }
+  });
+  console.log(`\n${verdict.length - bad}/${verdict.length} verified.${bad ? " TREAT THE FAILURES AS UNPROVEN." : ""}`);
+  process.exit(bad ? 1 : 0);
+}
+
+{
+  const { envelope, unwrapped } = unwrap(verdict);
+  if (unwrapped) {
+    console.log("(input looks like a dataset row: verifying its signed_verdict envelope, which is the object the signature covers)");
+  }
+  verdict = envelope;
+}
+
+let candidates = await loadCandidates();
 
 const sig = verdict.signature;
 if (typeof sig !== "string" || !sig.startsWith("ed25519:")) fail("verdict has no ed25519 signature field");
