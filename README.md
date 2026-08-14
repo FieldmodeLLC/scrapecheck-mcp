@@ -1,5 +1,10 @@
 # ScrapeCheck MCP — Verify Scraped Web Data Against Reality
 
+> **Here for the offline verifier?** It's in this repo:
+> [`tools/verify-verdict.mjs`](tools/verify-verdict.mjs) — one file, no
+> dependencies, verifies any ScrapeCheck verdict with no network access.
+> [How to use it →](#verify-a-verdict-yourself-offline)
+
 **Verify what you scraped for the price of scraping it.** This MCP server
 gives any agent a verification tool in its own toolbox: send a source URL,
 the scraped field values, and what was asked — ScrapeCheck **re-fetches the
