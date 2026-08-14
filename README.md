@@ -184,3 +184,12 @@ This repo contains the thin MCP storefront only — transport, payment
 handling, and tool registration. The verification engine (the anchored
 re-fetch, the lenses, the judge, the signing key, and the benchmark
 fixtures) runs at the ScrapeCheck origin and is not part of this codebase.
+
+## Changelog
+
+- **2026-08-13** — The live stats page counted our own test traffic in its
+  totals; it now separates self, crawler, and external. `/stats` gained a
+  `traffic` section publishing both numbers — including `external_paid`,
+  which reads zero at the time of this change and stays a permanently named
+  line. Self traffic was always labeled in the durable log; the public
+  surface now says so too.
