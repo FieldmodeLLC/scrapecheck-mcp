@@ -1,0 +1,508 @@
+{"pool": "hf", "ref": "DS-501", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-063", "rejected": "no-url-column"}
+{"pool": "github", "ref": "DS-150", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "github", "ref": "DS-308", "rejected": "no-data-files"}
+{"pool": "hf", "ref": "DS-070", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-108", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-034", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "hf", "ref": "DS-428", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-288", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-327", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-122", "rejected": "stale", "updated": "2026"}
+{"pool": "hf", "ref": "DS-222", "rejected": "stale", "updated": "2024"}
+{"pool": "github", "ref": "DS-426", "rejected": "no-url-column"}
+{"pool": "hf", "ref": "DS-235", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "kaggle", "ref": "DS-299", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-027", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-106", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-413", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-197", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-436", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-306", "rejected": "stale", "updated": "2026"}
+{"pool": "kaggle", "ref": "DS-021", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-048", "accepted": true, "url_col": "url", "claim_col": "title", "claim_kind": "title", "asked": "title of this page as scraped", "rows_claimed": "100-999", "rows_enumerated": "100-999", "rows_valid": "100-999", "parse_coverage": 1.0, "distinct_urls": false, "provenance": "[provenance text redacted: names sources]", "spot": [{"url": "[url redacted]", "verdict": "pass", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.97, "addressable": true}, {"url": "[url redacted]", "verdict": "unverifiable", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.5, "addressable": true}, {"url": "[url redacted]", "verdict": "unverifiable", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.5, "addressable": true}]}
+{"pool": "kaggle", "ref": "DS-359", "rejected": "stale", "updated": "2026"}
+{"pool": "kaggle", "ref": "DS-125", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-310", "rejected": "no-data-files"}
+{"pool": "github", "ref": "DS-495", "rejected": "stale"}
+{"pool": "kaggle", "ref": "DS-158", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-217", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-351", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-005", "rejected": "stale", "updated": "2023"}
+{"pool": "github", "ref": "DS-295", "rejected": "no-data-files"}
+{"pool": "kaggle", "ref": "DS-202", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-477", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-149", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-133", "rejected": "stale", "updated": "2024"}
+{"pool": "github", "ref": "DS-260", "rejected": "stale"}
+{"pool": "github", "ref": "DS-130", "rejected": "no-data-files"}
+{"pool": "hf", "ref": "DS-201", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-238", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-402", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "kaggle", "ref": "DS-462", "rejected": "spot-check-not-addressable", "addressable": 1}
+{"pool": "hf", "ref": "DS-014", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-207", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-305", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-300", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-433", "rejected": "stale", "updated": "2025"}
+{"pool": "hf", "ref": "DS-378", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "github", "ref": "DS-457", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-112", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "kaggle", "ref": "DS-357", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-254", "rejected": "no-parseable-rows"}
+{"pool": "kaggle", "ref": "DS-224", "rejected": "under-100-valid-rows", "valid": "10-99"}
+{"pool": "github", "ref": "DS-032", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "hf", "ref": "DS-261", "rejected": "stale", "updated": "2025"}
+{"pool": "kaggle", "ref": "DS-481", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-266", "rejected": "stale"}
+{"pool": "hf", "ref": "DS-028", "rejected": "stale", "updated": "2024"}
+{"pool": "github", "ref": "DS-044", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "kaggle", "ref": "DS-138", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-286", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-311", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "hf", "ref": "DS-118", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "kaggle", "ref": "DS-291", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-233", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-314", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-381", "rejected": "under-100-valid-rows", "valid": "10-99"}
+{"pool": "hf", "ref": "DS-443", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-139", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-198", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-354", "rejected": "stale", "updated": "2024"}
+{"pool": "github", "ref": "DS-496", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-179", "rejected": "stale"}
+{"pool": "hf", "ref": "DS-384", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "hf", "ref": "DS-188", "rejected": "stale", "updated": "2025"}
+{"pool": "hf", "ref": "DS-172", "rejected": "stale", "updated": "2025"}
+{"pool": "kaggle", "ref": "DS-276", "accepted": true, "url_col": "url", "claim_col": "title", "claim_kind": "title", "asked": "title of this page as scraped", "rows_claimed": "100-999", "rows_enumerated": "100-999", "rows_valid": "100-999", "parse_coverage": 1.0, "distinct_urls": false, "provenance": "[provenance text redacted: names sources]", "spot": [{"url": "[url redacted]", "verdict": "unverifiable", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.5, "addressable": true}, {"url": "[url redacted]", "verdict": "unverifiable", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.5, "addressable": true}, {"url": "[url redacted]", "verdict": "unverifiable", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.5, "addressable": true}]}
+{"pool": "github", "ref": "DS-170", "rejected": "no-data-files"}
+{"pool": "hf", "ref": "DS-390", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-408", "rejected": "rows-api-failed", "error": "HTTP Error 500: Internal Server Error"}
+{"pool": "github", "ref": "DS-461", "rejected": "no-data-files"}
+{"pool": "hf", "ref": "DS-293", "rejected": "stale", "updated": "2025"}
+{"pool": "hf", "ref": "DS-020", "rejected": "stale", "updated": "2023"}
+{"pool": "github", "ref": "DS-012", "rejected": "no-parseable-rows"}
+{"pool": "hf", "ref": "DS-109", "rejected": "stale", "updated": "2025"}
+{"pool": "hf", "ref": "DS-006", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-243", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "hf", "ref": "DS-098", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-499", "note": "file-skipped-over-cap", "file": "raw/prodazhbi_06_04_2026.csv", "raw_estimate": "10k-1M"}
+{"pool": "kaggle", "ref": "DS-110", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-085", "rejected": "no-data-files"}
+{"pool": "github", "ref": "DS-455", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "hf", "ref": "DS-360", "rejected": "stale", "updated": "2026"}
+{"pool": "hf", "ref": "DS-225", "rejected": "stale", "updated": "2022"}
+{"pool": "hf", "ref": "DS-332", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-499", "note": "file-skipped-over-cap", "file": "raw/prodazhbi_27_07_2026.csv", "raw_estimate": "10k-1M"}
+{"pool": "hf", "ref": "DS-124", "rejected": "stale", "updated": "2022"}
+{"pool": "kaggle", "ref": "DS-339", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-205", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-081", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "kaggle", "ref": "DS-114", "rejected": "no-url-column"}
+{"pool": "kaggle", "ref": "DS-215", "rejected": "under-100-valid-rows", "valid": "10-99"}
+{"pool": "hf", "ref": "DS-058", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-403", "rejected": "no-url-column"}
+{"phase": "selection-complete", "accepted": 17, "checks_spent": 66}
+{"pool": "hf", "ref": "DS-090", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-454", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-017", "rejected": "no-parseable-rows"}
+{"pool": "hf", "ref": "DS-024", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-097", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-076", "rejected": "no-parseable-rows"}
+{"pool": "hf", "ref": "DS-446", "rejected": "stale", "updated": "2022"}
+{"pool": "github", "ref": "DS-269", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "kaggle", "ref": "DS-316", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-093", "rejected": "stale", "updated": "2023"}
+{"pool": "github", "ref": "DS-031", "rejected": "no-data-files"}
+{"pool": "hf", "ref": "DS-119", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-252", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-415", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-127", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-036", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-159", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-105", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-285", "rejected": "no-url-column"}
+{"pool": "hf", "ref": "DS-078", "rejected": "stale", "updated": "2024"}
+{"pool": "github", "ref": "DS-321", "rejected": "stale"}
+{"pool": "kaggle", "ref": "DS-393", "rejected": "no-claim-column"}
+{"pool": "kaggle", "ref": "DS-492", "rejected": "no-url-column"}
+{"pool": "hf", "ref": "DS-209", "rejected": "rows-api-failed", "error": "HTTP Error 501: Not Implemented"}
+{"pool": "github", "ref": "DS-200", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "hf", "ref": "DS-204", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-145", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-066", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-177", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-309", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-064", "rejected": "stale", "updated": "2026"}
+{"pool": "hf", "ref": "DS-440", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-317", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "hf", "ref": "DS-370", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-478", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "hf", "ref": "DS-033", "rejected": "stale", "updated": "2026"}
+{"pool": "hf", "ref": "DS-417", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-412", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-355", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "hf", "ref": "DS-341", "rejected": "stale", "updated": "2026"}
+{"pool": "hf", "ref": "DS-010", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-458", "rejected": "stale", "updated": "2022"}
+{"pool": "kaggle", "ref": "DS-087", "accepted": true, "url_col": "url", "claim_col": "title", "claim_kind": "title", "asked": "title of this page as scraped", "rows_claimed": "100-999", "rows_enumerated": "100-999", "rows_valid": "100-999", "parse_coverage": 1.0, "distinct_urls": false, "provenance": "[provenance text redacted: names sources]", "spot": [{"url": "[url redacted]", "verdict": "pass", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.97, "addressable": true}, {"url": "[url redacted]", "verdict": "pass", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.97, "addressable": true}, {"url": "[url redacted]", "verdict": "pass", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.97, "addressable": true}]}
+{"pool": "github", "ref": "DS-069", "rejected": "no-parseable-rows"}
+{"pool": "github", "ref": "DS-227", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "kaggle", "ref": "DS-452", "rejected": "too-large-to-evaluate", "bytes": "1M+"}
+{"pool": "hf", "ref": "DS-468", "rejected": "stale", "updated": "2026"}
+{"pool": "kaggle", "ref": "DS-131", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-176", "rejected": "stale", "updated": "2026"}
+{"pool": "hf", "ref": "DS-035", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "hf", "ref": "DS-283", "rejected": "stale", "updated": "2024"}
+{"pool": "kaggle", "ref": "DS-208", "accepted": true, "url_col": "brand_page_url", "claim_col": "list_price", "claim_kind": "price", "asked": "current listed price as scraped", "rows_claimed": "1k-10k", "rows_enumerated": "1k-10k", "rows_valid": "100-999", "parse_coverage": 1.0, "distinct_urls": false, "provenance": "[provenance text redacted: names sources]", "spot": [{"url": "[url redacted]", "verdict": "fail", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.9, "addressable": true}, {"url": "[url redacted]", "verdict": "fail", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.9, "addressable": true}, {"url": "[url redacted]", "verdict": "fail", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.9, "addressable": true}]}
+{"pool": "hf", "ref": "DS-322", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-065", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-445", "rejected": "stale", "updated": "2022"}
+{"pool": "hf", "ref": "DS-166", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-464", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-180", "rejected": "stale", "updated": "2023"}
+{"pool": "github", "ref": "DS-135", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "hf", "ref": "DS-431", "rejected": "stale", "updated": "2023"}
+{"pool": "github", "ref": "DS-340", "rejected": "no-data-files"}
+{"pool": "hf", "ref": "DS-484", "rejected": "stale", "updated": "2024"}
+{"pool": "kaggle", "ref": "DS-088", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-375", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "hf", "ref": "DS-102", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-424", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "kaggle", "ref": "DS-273", "rejected": "stale", "updated": "2026"}
+{"pool": "hf", "ref": "DS-493", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "github", "ref": "DS-075", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-383", "rejected": "stale"}
+{"pool": "kaggle", "ref": "DS-432", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-356", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "github", "ref": "DS-141", "rejected": "stale"}
+{"pool": "github", "ref": "DS-239", "rejected": "stale"}
+{"pool": "hf", "ref": "DS-474", "rejected": "stale", "updated": "2024"}
+{"pool": "github", "ref": "DS-240", "rejected": "no-data-files"}
+{"pool": "kaggle", "ref": "DS-192", "rejected": "stale", "updated": "2026"}
+{"pool": "hf", "ref": "DS-395", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "kaggle", "ref": "DS-052", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-096", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-008", "rejected": "stale", "updated": "2022"}
+{"pool": "kaggle", "ref": "DS-319", "rejected": "too-large-to-evaluate", "bytes": "1M+"}
+{"pool": "kaggle", "ref": "DS-374", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-326", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "hf", "ref": "DS-256", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-388", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-120", "rejected": "stale", "updated": "2023"}
+{"pool": "github", "ref": "DS-190", "accepted": true, "url_col": "image", "claim_col": "Selling Price", "claim_kind": "price", "asked": "current listed price as scraped", "rows_claimed": "100-999", "rows_enumerated": "100-999", "rows_valid": "100-999", "parse_coverage": 1.0, "distinct_urls": false, "provenance": "[provenance text redacted: names sources]", "spot": [{"url": "[url redacted]", "verdict": "fail", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.9, "addressable": true}, {"url": "[url redacted]", "verdict": "fail", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.9, "addressable": true}, {"url": "[url redacted]", "verdict": "fail", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.9, "addressable": true}]}
+{"pool": "github", "ref": "DS-074", "rejected": "stale"}
+{"pool": "hf", "ref": "DS-331", "rejected": "stale", "updated": "2025"}
+{"pool": "github", "ref": "DS-262", "rejected": "stale"}
+{"pool": "kaggle", "ref": "DS-182", "rejected": "under-100-valid-rows", "valid": "10-99"}
+{"pool": "kaggle", "ref": "DS-272", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-394", "rejected": "no-url-column"}
+{"pool": "hf", "ref": "DS-068", "rejected": "stale", "updated": "2023"}
+{"pool": "github", "ref": "DS-103", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-422", "rejected": "stale", "updated": "2026"}
+{"pool": "github", "ref": "DS-183", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-067", "rejected": "stale"}
+{"pool": "hf", "ref": "DS-377", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-056", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "github", "ref": "DS-303", "rejected": "stale"}
+{"pool": "kaggle", "ref": "DS-282", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-480", "rejected": "no-url-column"}
+{"pool": "hf", "ref": "DS-169", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "hf", "ref": "DS-429", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-230", "rejected": "stale", "updated": "2023"}
+{"pool": "github", "ref": "DS-368", "rejected": "no-url-column"}
+{"pool": "kaggle", "ref": "DS-153", "rejected": "stale", "updated": "2026"}
+{"pool": "kaggle", "ref": "DS-244", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-469", "rejected": "no-url-column"}
+{"pool": "hf", "ref": "DS-500", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "hf", "ref": "DS-151", "rejected": "stale", "updated": "2022"}
+{"pool": "kaggle", "ref": "DS-411", "accepted": true, "url_col": "product_url", "claim_col": "price", "claim_kind": "price", "asked": "current listed price as scraped", "rows_claimed": "100-999", "rows_enumerated": "100-999", "rows_valid": "100-999", "parse_coverage": 1.0, "distinct_urls": true, "provenance": "[provenance text redacted: names sources]", "spot": [{"url": "[url redacted]", "verdict": "fail", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.46, "addressable": true}, {"url": "[url redacted]", "verdict": "pass", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.97, "addressable": true}, {"url": "[url redacted]", "verdict": "fail", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.9, "addressable": true}]}
+{"pool": "hf", "ref": "DS-248", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-253", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-491", "rejected": "no-url-column"}
+{"pool": "hf", "ref": "DS-143", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-323", "rejected": "stale", "updated": "2022"}
+{"pool": "github", "ref": "DS-147", "rejected": "under-100-valid-rows", "valid": "<10"}
+{"pool": "github", "ref": "DS-089", "rejected": "no-data-files"}
+{"pool": "hf", "ref": "DS-353", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-193", "rejected": "no-url-column"}
+{"pool": "hf", "ref": "DS-184", "rejected": "stale", "updated": "2022"}
+{"pool": "hf", "ref": "DS-162", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-450", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-234", "rejected": "stale", "updated": "2023"}
+{"pool": "github", "ref": "DS-437", "rejected": "no-data-files"}
+{"pool": "kaggle", "ref": "DS-026", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-414", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-372", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-029", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-194", "rejected": "no-url-column"}
+{"pool": "kaggle", "ref": "DS-255", "rejected": "no-url-column"}
+{"pool": "kaggle", "ref": "DS-206", "rejected": "under-100-valid-rows", "valid": "10-99"}
+{"pool": "kaggle", "ref": "DS-104", "accepted": true, "url_col": "url", "claim_col": "title", "claim_kind": "title", "asked": "title of this page as scraped", "rows_claimed": "100-999", "rows_enumerated": "100-999", "rows_valid": "100-999", "parse_coverage": 1.0, "distinct_urls": false, "provenance": "[provenance text redacted: names sources]", "spot": [{"url": "[url redacted]", "verdict": "unverifiable", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.5, "addressable": true}, {"url": "[url redacted]", "verdict": "fail", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.9, "addressable": true}, {"url": "[url redacted]", "verdict": "fail", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.9, "addressable": true}]}
+{"pool": "hf", "ref": "DS-258", "rejected": "stale", "updated": "2025"}
+{"pool": "kaggle", "ref": "DS-165", "rejected": "stale", "updated": "2026"}
+{"pool": "kaggle", "ref": "DS-039", "rejected": "under-100-valid-rows", "valid": "10-99"}
+{"pool": "kaggle", "ref": "DS-236", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-038", "rejected": "under-100-valid-rows", "valid": "10-99"}
+{"pool": "hf", "ref": "DS-280", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-157", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-315", "rejected": "stale", "updated": "2024"}
+{"pool": "kaggle", "ref": "DS-115", "rejected": "under-100-valid-rows", "valid": "10-99"}
+{"pool": "kaggle", "ref": "DS-298", "rejected": "under-100-valid-rows", "valid": "10-99"}
+{"pool": "hf", "ref": "DS-290", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "kaggle", "ref": "DS-007", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-296", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-004", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-041", "rejected": "no-url-column"}
+{"pool": "kaggle", "ref": "DS-497", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-284", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-488", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-441", "rejected": "rows-api-failed", "error": "HTTP Error 500: Internal Server Error"}
+{"pool": "hf", "ref": "DS-013", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-212", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-313", "rejected": "under-100-valid-rows", "valid": "10-99"}
+{"pool": "hf", "ref": "DS-011", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-018", "rejected": "stale", "updated": "2025"}
+{"pool": "kaggle", "ref": "DS-277", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-476", "rejected": "stale"}
+{"pool": "hf", "ref": "DS-279", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-220", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-292", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-137", "rejected": "stale", "updated": "2026"}
+{"pool": "kaggle", "ref": "DS-086", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-060", "rejected": "too-large-to-evaluate", "bytes": "1M+"}
+{"pool": "kaggle", "ref": "DS-418", "rejected": "under-100-valid-rows", "valid": "10-99"}
+{"pool": "github", "ref": "DS-046", "rejected": "no-data-files"}
+{"pool": "github", "ref": "DS-362", "rejected": "no-parseable-rows"}
+{"pool": "github", "ref": "DS-101", "rejected": "stale"}
+{"pool": "kaggle", "ref": "DS-382", "rejected": "too-large-to-evaluate", "bytes": "1M+"}
+{"pool": "kaggle", "ref": "DS-460", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-199", "rejected": "stale"}
+{"pool": "hf", "ref": "DS-221", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "kaggle", "ref": "DS-257", "accepted": true, "url_col": "product_url", "claim_col": "product_price", "claim_kind": "price", "asked": "current listed price as scraped", "rows_claimed": "100-999", "rows_enumerated": "100-999", "rows_valid": "100-999", "parse_coverage": 1.0, "distinct_urls": true, "provenance": "[provenance text redacted: names sources]", "spot": [{"url": "[url redacted]", "verdict": "pass", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.97, "addressable": true}, {"url": "[url redacted]", "verdict": "fail", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.9, "addressable": true}, {"url": "[url redacted]", "verdict": "unverifiable", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0, "addressable": false}]}
+{"pool": "kaggle", "ref": "DS-325", "rejected": "no-url-column"}
+{"pool": "kaggle", "ref": "DS-430", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-391", "rejected": "stale", "updated": "2026"}
+{"pool": "hf", "ref": "DS-442", "rejected": "stale", "updated": "2023"}
+{"pool": "github", "ref": "DS-092", "rejected": "no-url-column"}
+{"pool": "kaggle", "ref": "DS-419", "rejected": "stale", "updated": "2026"}
+{"pool": "kaggle", "ref": "DS-312", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-132", "rejected": "stale", "updated": "2024"}
+{"pool": "github", "ref": "DS-459", "rejected": "no-data-files"}
+{"pool": "github", "ref": "DS-289", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "hf", "ref": "DS-148", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "hf", "ref": "DS-071", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-055", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-030", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-107", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "hf", "ref": "DS-274", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-246", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-302", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "github", "ref": "DS-471", "rejected": "no-data-files"}
+{"pool": "github", "ref": "DS-015", "rejected": "stale"}
+{"pool": "hf", "ref": "DS-210", "rejected": "rows-api-failed", "error": "HTTP Error 500: Internal Server Error"}
+{"pool": "github", "ref": "DS-241", "rejected": "no-url-column"}
+{"pool": "kaggle", "ref": "DS-435", "rejected": "no-url-column"}
+{"pool": "hf", "ref": "DS-245", "rejected": "stale", "updated": "2022"}
+{"pool": "kaggle", "ref": "DS-287", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-439", "rejected": "stale"}
+{"pool": "kaggle", "ref": "DS-407", "rejected": "no-parseable-rows"}
+{"pool": "hf", "ref": "DS-019", "rejected": "stale", "updated": "2026"}
+{"pool": "github", "ref": "DS-399", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "github", "ref": "DS-490", "rejected": "no-data-files"}
+{"pool": "kaggle", "ref": "DS-080", "accepted": true, "url_col": "url", "claim_col": "title", "claim_kind": "title", "asked": "title of this page as scraped", "rows_claimed": "100-999", "rows_enumerated": "100-999", "rows_valid": "100-999", "parse_coverage": 1.0, "distinct_urls": false, "provenance": "[provenance text redacted: names sources]", "spot": [{"url": "[url redacted]", "verdict": "fail", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.9, "addressable": true}, {"url": "[url redacted]", "verdict": "pass", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.97, "addressable": true}, {"url": "[url redacted]", "verdict": "pass", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.98, "addressable": true}]}
+{"pool": "kaggle", "ref": "DS-231", "rejected": "stale", "updated": "2026"}
+{"pool": "hf", "ref": "DS-171", "rejected": "stale", "updated": "2022"}
+{"pool": "kaggle", "ref": "DS-270", "rejected": "under-100-valid-rows", "valid": "10-99"}
+{"pool": "hf", "ref": "DS-366", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-405", "rejected": "stale", "updated": "2025"}
+{"pool": "kaggle", "ref": "DS-140", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-406", "rejected": "stale", "updated": "2026"}
+{"pool": "hf", "ref": "DS-398", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-265", "rejected": "stale", "updated": "2024"}
+{"pool": "kaggle", "ref": "DS-416", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-050", "rejected": "under-100-valid-rows", "valid": "10-99"}
+{"pool": "hf", "ref": "DS-264", "rejected": "stale", "updated": "2024"}
+{"pool": "github", "ref": "DS-121", "rejected": "stale"}
+{"pool": "hf", "ref": "DS-226", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-434", "accepted": true, "url_col": "Image_URL", "claim_col": "Price", "claim_kind": "price", "asked": "current listed price as scraped", "rows_claimed": "100-999", "rows_enumerated": "100-999", "rows_valid": "100-999", "parse_coverage": 1.0, "distinct_urls": false, "provenance": "[provenance text redacted: names sources]", "spot": [{"url": "[url redacted]", "verdict": "fail", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.9, "addressable": true}, {"url": "[url redacted]", "verdict": "fail", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.9, "addressable": true}, {"url": "[url redacted]", "verdict": "fail", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.9, "addressable": true}]}
+{"pool": "kaggle", "ref": "DS-473", "rejected": "spot-check-not-addressable", "addressable": 1}
+{"pool": "kaggle", "ref": "DS-275", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-444", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-320", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-163", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-214", "rejected": "stale", "updated": "2024"}
+{"pool": "github", "ref": "DS-421", "rejected": "stale"}
+{"pool": "hf", "ref": "DS-053", "rejected": "stale", "updated": "2024"}
+{"pool": "github", "ref": "DS-061", "rejected": "no-url-column"}
+{"pool": "github", "ref": "DS-475", "rejected": "stale"}
+{"pool": "kaggle", "ref": "DS-247", "rejected": "no-url-column"}
+{"pool": "hf", "ref": "DS-389", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-336", "rejected": "stale", "updated": "2023"}
+{"pool": "github", "ref": "DS-022", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-438", "rejected": "stale", "updated": "2023"}
+{"pool": "github", "ref": "DS-297", "rejected": "stale"}
+{"pool": "kaggle", "ref": "DS-144", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-187", "rejected": "stale", "updated": "2023"}
+{"pool": "github", "ref": "DS-396", "rejected": "no-data-files"}
+{"pool": "kaggle", "ref": "DS-449", "rejected": "no-url-column"}
+{"pool": "kaggle", "ref": "DS-400", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-343", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-494", "rejected": "stale", "updated": "2026"}
+{"pool": "hf", "ref": "DS-386", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "github", "ref": "DS-100", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "github", "ref": "DS-385", "rejected": "no-parseable-rows"}
+{"pool": "hf", "ref": "DS-363", "rejected": "stale", "updated": "2024"}
+{"pool": "github", "ref": "DS-175", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "hf", "ref": "DS-123", "rejected": "stale", "updated": "2025"}
+{"pool": "kaggle", "ref": "DS-079", "accepted": true, "url_col": "img_url", "claim_col": "price", "claim_kind": "price", "asked": "current listed price as scraped", "rows_claimed": "1k-10k", "rows_enumerated": "1k-10k", "rows_valid": "1k-10k", "parse_coverage": 1.0, "distinct_urls": true, "provenance": "[provenance text redacted: names sources]", "spot": [{"url": "[url redacted]", "verdict": "fail", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.9, "addressable": true}, {"url": "[url redacted]", "verdict": "fail", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.9, "addressable": true}, {"url": "[url redacted]", "verdict": "fail", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.9, "addressable": true}]}
+{"pool": "github", "ref": "DS-062", "rejected": "stale"}
+{"pool": "github", "ref": "DS-486", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "hf", "ref": "DS-470", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-155", "rejected": "stale", "updated": "2023"}
+{"pool": "github", "ref": "DS-337", "rejected": "no-data-files"}
+{"pool": "kaggle", "ref": "DS-271", "accepted": true, "url_col": "url", "claim_col": "title", "claim_kind": "title", "asked": "title of this page as scraped", "rows_claimed": "100-999", "rows_enumerated": "100-999", "rows_valid": "100-999", "parse_coverage": 1.0, "distinct_urls": false, "provenance": "[provenance text redacted: names sources]", "spot": [{"url": "[url redacted]", "verdict": "fail", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.9, "addressable": true}, {"url": "[url redacted]", "verdict": "pass", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.98, "addressable": true}, {"url": "[url redacted]", "verdict": "pass", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.97, "addressable": true}]}
+{"pool": "kaggle", "ref": "DS-054", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-350", "rejected": "stale", "updated": "2026"}
+{"pool": "hf", "ref": "DS-498", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "hf", "ref": "DS-453", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "kaggle", "ref": "DS-333", "rejected": "no-url-column"}
+{"pool": "hf", "ref": "DS-304", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-485", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-345", "rejected": "stale", "updated": "2022"}
+{"pool": "hf", "ref": "DS-042", "rejected": "stale", "updated": "2025"}
+{"pool": "kaggle", "ref": "DS-318", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-371", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "github", "ref": "DS-003", "rejected": "stale"}
+{"pool": "hf", "ref": "DS-324", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-136", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-219", "accepted": true, "url_col": "url", "claim_col": "price", "claim_kind": "price", "asked": "current listed price as scraped", "rows_claimed": "1k-10k", "rows_enumerated": "1k-10k", "rows_valid": "1k-10k", "parse_coverage": 1.0, "distinct_urls": false, "provenance": "[provenance text redacted: names sources]", "spot": [{"url": "[url redacted]", "verdict": "pass", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.97, "addressable": true}, {"url": "[url redacted]", "verdict": "pass", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.97, "addressable": true}, {"url": "[url redacted]", "verdict": "pass", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.97, "addressable": true}]}
+{"pool": "kaggle", "ref": "DS-358", "rejected": "stale", "updated": "2026"}
+{"pool": "kaggle", "ref": "DS-045", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-037", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "kaggle", "ref": "DS-040", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-185", "rejected": "no-url-column"}
+{"pool": "github", "ref": "DS-186", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "kaggle", "ref": "DS-237", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-152", "rejected": "stale", "updated": "2025"}
+{"pool": "kaggle", "ref": "DS-117", "rejected": "too-large-to-evaluate", "bytes": "1M+"}
+{"pool": "kaggle", "ref": "DS-254", "note": "file-skipped-over-cap", "file": "United Nations_Outer Space Objects Index_Retrieved 08.12.2026 by PUB-243.csv", "raw_estimate": "10k-1M"}
+{"pool": "github", "ref": "DS-267", "rejected": "no-parseable-rows"}
+{"pool": "github", "ref": "DS-427", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-009", "accepted": true, "url_col": "url", "claim_col": "title", "claim_kind": "title", "asked": "title of this page as scraped", "rows_claimed": "100-999", "rows_enumerated": "100-999", "rows_valid": "100-999", "parse_coverage": 1.0, "distinct_urls": false, "provenance": "[provenance text redacted: names sources]", "spot": [{"url": "[url redacted]", "verdict": "unverifiable", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.5, "addressable": true}, {"url": "[url redacted]", "verdict": "unverifiable", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.5, "addressable": true}, {"url": "[url redacted]", "verdict": "unverifiable", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.5, "addressable": true}]}
+{"pool": "github", "ref": "DS-281", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "hf", "ref": "DS-502", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-410", "rejected": "stale", "updated": "2022"}
+{"pool": "hf", "ref": "DS-001", "rejected": "stale", "updated": "2024"}
+{"pool": "kaggle", "ref": "DS-463", "rejected": "stale", "updated": "2026"}
+{"pool": "kaggle", "ref": "DS-116", "rejected": "spot-check-not-addressable", "addressable": 0}
+{"pool": "hf", "ref": "DS-467", "rejected": "stale", "updated": "2023"}
+{"pool": "github", "ref": "DS-232", "rejected": "stale"}
+{"pool": "kaggle", "ref": "DS-228", "rejected": "no-url-column"}
+{"pool": "hf", "ref": "DS-218", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-091", "rejected": "stale", "updated": "2026"}
+{"pool": "github", "ref": "DS-263", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "github", "ref": "DS-168", "rejected": "no-url-column"}
+{"pool": "hf", "ref": "DS-348", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-329", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "hf", "ref": "DS-392", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "github", "ref": "DS-503", "rejected": "no-url-column"}
+{"pool": "github", "ref": "DS-113", "rejected": "spot-check-not-addressable", "addressable": 0}
+{"pool": "kaggle", "ref": "DS-268", "rejected": "no-url-column"}
+{"pool": "hf", "ref": "DS-047", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "hf", "ref": "DS-025", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "hf", "ref": "DS-223", "rejected": "stale", "updated": "2026"}
+{"pool": "hf", "ref": "DS-328", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-073", "rejected": "stale", "updated": "2024"}
+{"pool": "github", "ref": "DS-456", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "hf", "ref": "DS-307", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "hf", "ref": "DS-349", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-077", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-083", "rejected": "stale", "updated": "2024"}
+{"pool": "kaggle", "ref": "DS-373", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-049", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-211", "accepted": true, "url_col": "url", "claim_col": "title", "claim_kind": "title", "asked": "title of this page as scraped", "rows_claimed": "100-999", "rows_enumerated": "100-999", "rows_valid": "100-999", "parse_coverage": 1.0, "distinct_urls": false, "provenance": "[provenance text redacted: names sources]", "spot": [{"url": "[url redacted]", "verdict": "unverifiable", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.5, "addressable": true}, {"url": "[url redacted]", "verdict": "unverifiable", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.5, "addressable": true}, {"url": "[url redacted]", "verdict": "unverifiable", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.5, "addressable": true}]}
+{"pool": "kaggle", "ref": "DS-082", "accepted": true, "url_col": "url", "claim_col": "title", "claim_kind": "title", "asked": "title of this page as scraped", "rows_claimed": "100-999", "rows_enumerated": "100-999", "rows_valid": "100-999", "parse_coverage": 1.0, "distinct_urls": false, "provenance": "[provenance text redacted: names sources]", "spot": [{"url": "[url redacted]", "verdict": "unverifiable", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.5, "addressable": true}, {"url": "[url redacted]", "verdict": "unverifiable", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.5, "addressable": true}, {"url": "[url redacted]", "verdict": "unverifiable", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.5, "addressable": true}]}
+{"pool": "kaggle", "ref": "DS-167", "accepted": true, "url_col": "url", "claim_col": "title", "claim_kind": "title", "asked": "title of this page as scraped", "rows_claimed": "100-999", "rows_enumerated": "100-999", "rows_valid": "100-999", "parse_coverage": 1.0, "distinct_urls": false, "provenance": "[provenance text redacted: names sources]", "spot": [{"url": "[url redacted]", "verdict": "unverifiable", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.5, "addressable": true}, {"url": "[url redacted]", "verdict": "unverifiable", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.5, "addressable": true}, {"url": "[url redacted]", "verdict": "unverifiable", "verdict_id": "[withheld: resolvable to url+claim via our verdict lookup]", "confidence": 0.5, "addressable": true}]}
+{"pool": "github", "ref": "DS-128", "rejected": "no-data-files"}
+{"pool": "kaggle", "ref": "DS-342", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-095", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-142", "rejected": "stale", "updated": "2024"}
+{"pool": "github", "ref": "DS-160", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-111", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-129", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-347", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "kaggle", "ref": "DS-094", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-213", "rejected": "no-data-files"}
+{"pool": "github", "ref": "DS-451", "rejected": "no-data-files"}
+{"pool": "hf", "ref": "DS-425", "rejected": "stale", "updated": "2025"}
+{"pool": "github", "ref": "DS-448", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "hf", "ref": "DS-465", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-479", "rejected": "stale", "updated": "2024"}
+{"pool": "github", "ref": "DS-181", "rejected": "no-parseable-rows"}
+{"pool": "kaggle", "ref": "DS-043", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-397", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-487", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-002", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-401", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-016", "rejected": "under-100-valid-rows", "valid": "10-99"}
+{"pool": "github", "ref": "DS-380", "rejected": "no-data-files"}
+{"pool": "hf", "ref": "DS-178", "rejected": "rows-api-failed", "error": "HTTP Error 501: Not Implemented"}
+{"pool": "kaggle", "ref": "DS-301", "rejected": "no-claim-column"}
+{"pool": "kaggle", "ref": "DS-156", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-278", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-059", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-057", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-409", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-472", "rejected": "stale", "updated": "2024"}
+{"pool": "kaggle", "ref": "DS-423", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-161", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "kaggle", "ref": "DS-346", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-482", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-499", "rejected": "no-url-column"}
+{"pool": "hf", "ref": "DS-250", "rejected": "stale", "updated": "2025"}
+{"pool": "hf", "ref": "DS-134", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-330", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-249", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "hf", "ref": "DS-404", "rejected": "stale", "updated": "2023"}
+{"pool": "github", "ref": "DS-203", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "hf", "ref": "DS-352", "rejected": "stale", "updated": "2024"}
+{"pool": "kaggle", "ref": "DS-338", "rejected": "provenance-not-documented"}
+{"pool": "kaggle", "ref": "DS-084", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-259", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-216", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-379", "rejected": "stale", "updated": "2023"}
+{"pool": "hf", "ref": "DS-099", "rejected": "stale", "updated": "2025"}
+{"pool": "kaggle", "ref": "DS-126", "rejected": "too-large-to-evaluate", "bytes": "1M+"}
+{"pool": "kaggle", "ref": "DS-189", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-173", "rejected": "stale", "updated": "2023"}
+{"pool": "github", "ref": "DS-154", "rejected": "no-parseable-rows"}
+{"pool": "hf", "ref": "DS-196", "rejected": "stale", "updated": "2022"}
+{"pool": "hf", "ref": "DS-344", "rejected": "stale", "updated": "2023"}
+{"pool": "kaggle", "ref": "DS-195", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-191", "rejected": "stale", "updated": "2023"}
+{"pool": "github", "ref": "DS-229", "rejected": "no-parseable-rows"}
+{"pool": "github", "ref": "DS-164", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "hf", "ref": "DS-376", "rejected": "stale", "updated": "2024"}
+{"pool": "kaggle", "ref": "DS-146", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-483", "rejected": "stale", "updated": "2023"}
+{"pool": "github", "ref": "DS-364", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-466", "rejected": "stale", "updated": "2024"}
+{"pool": "hf", "ref": "DS-023", "rejected": "stale", "updated": "2026"}
+{"pool": "github", "ref": "DS-447", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "kaggle", "ref": "DS-072", "rejected": "provenance-not-documented"}
+{"pool": "hf", "ref": "DS-420", "rejected": "rows-api-failed", "error": "HTTP Error 429: Too Many Requests"}
+{"pool": "github", "ref": "DS-251", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "hf", "ref": "DS-504", "rejected": "stale", "updated": "2025"}
+{"pool": "github", "ref": "DS-334", "rejected": "no-data-files"}
+{"pool": "hf", "ref": "DS-367", "rejected": "stale", "updated": "2024"}
+{"pool": "github", "ref": "DS-335", "rejected": "no-url-column"}
+{"pool": "kaggle", "ref": "DS-387", "rejected": "provenance-not-documented"}
+{"pool": "github", "ref": "DS-489", "rejected": "stale"}
+{"pool": "github", "ref": "DS-242", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "kaggle", "ref": "DS-369", "rejected": "spot-check-not-addressable", "addressable": 1}
+{"pool": "hf", "ref": "DS-174", "rejected": "stale", "updated": "2024"}
+{"pool": "kaggle", "ref": "DS-051", "rejected": "under-100-valid-rows", "valid": "10-99"}
+{"pool": "hf", "ref": "DS-294", "rejected": "stale", "updated": "2023"}
+{"pool": "github", "ref": "DS-361", "rejected": "tree-failed", "error": "HTTP Error 403: rate limit exceeded"}
+{"pool": "kaggle", "ref": "DS-365", "rejected": "under-100-valid-rows", "valid": "10-99"}
