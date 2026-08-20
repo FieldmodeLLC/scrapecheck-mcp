@@ -11,6 +11,8 @@ the scraped field values, and what was asked — ScrapeCheck **re-fetches the
 page itself** and returns an ed25519-signed verdict: `pass`, `fail`, or
 `unverifiable`.
 
+**Try it in your browser:** [Free Price Mismatch Checker](https://scrapecheck.fly.dev/price-mismatch-checker) — paste a product URL and get a signed, independent check of whether the page's visible price matches its own structured data. Free, no signup.
+
 **Endpoint:** `https://scrapecheck-mcp.fly.dev/mcp` (streamable HTTP)
 **Payment:** x402 in-band (USDC on Base) — no API key, no signup. A free
 allowance per client identity is served before payment is required.
