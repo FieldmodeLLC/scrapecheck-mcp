@@ -1,17 +1,22 @@
-# ScrapeCheck MCP — Verify Scraped Web Data Against Reality
+# ScrapeCheck MCP: the verification beat for agents that spend
 
 > **Here for the offline verifier?** It's in this repo:
 > [`tools/verify-verdict.mjs`](tools/verify-verdict.mjs) — one file, no
 > dependencies, verifies any ScrapeCheck verdict with no network access.
 > [How to use it →](#verify-a-verdict-yourself-offline)
 
-**Verify what you scraped for the price of scraping it.** This MCP server
-gives any agent a verification tool in its own toolbox: send a source URL,
-the scraped field values, and what was asked — ScrapeCheck **re-fetches the
-page itself** and returns an ed25519-signed verdict: `pass`, `fail`, or
-`unverifiable`.
+Agents now find a provider, pay through x402, receive data, and act on
+it. Nothing in that flow asks whether the data is true. This server adds
+the missing beat. Before your agent acts on a value it fetched or paid
+for, it sends the source URL, the value, and what was asked; ScrapeCheck
+re-fetches the page from its own infrastructure and returns an
+ed25519-signed verdict: `pass`, `fail`, or `unverifiable`. Never a
+guess, and anything unconfirmed is unverifiable, never pass.
 
-**Try it in your browser:** [Free Price Mismatch Checker](https://scrapecheck.fly.dev/price-mismatch-checker) — paste a product URL and get a signed, independent check of whether the page's visible price matches its own structured data. Free, no signup.
+One line to install, and the agent pays per check through the same x402
+rail it already spends on: no API key, no signup, a free allowance
+before payment is required, and every verdict verifiable offline against
+our published key.
 
 **Endpoint:** `https://scrapecheck-mcp.fly.dev/mcp` (streamable HTTP)
 **Payment:** x402 in-band (USDC on Base) — no API key, no signup. A free
@@ -25,6 +30,13 @@ allowance per client identity is served before payment is required.
 - `verify_web_field` — $0.01 — Full verification: value present on the re-fetched live page, served live, and an independent LLM judge confirms it answers what was asked. Positive verdict: `pass`.
 - `verify_presence` — $0.002 — Presence only — does **NOT** confirm the value answers the question. Positive verdict: `present`, never `pass`.
 - `get_verifier_info` — free — The trust artifact: public key, benchmark summary, scope, endpoints.
+
+## Where this sits in an agent's spending loop
+
+The payment rail answers who paid what, on whose authority. The receipt
+is perfect, and the receipt holds no evidence about the data. This tool
+is the step between receiving and acting: one call per value your agent
+is about to trust, priced in the same cents the data itself cost.
 
 ## The trust guarantee is structural, not statistical
 

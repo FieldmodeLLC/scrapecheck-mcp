@@ -1,12 +1,12 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
   "name": "io.github.FieldmodeLLC/scrapecheck",
-  "description": "Verify scraped data against the live source page. Signed verdicts, $0.01 via x402.",
+  "description": "Make your agent verify before it acts on data it fetched or paid for: ScrapeCheck independently re-fetches the source page and returns an ed25519-signed verdict, checkable offline. Paid in-band via x402, from $0.002, first checks free. No API key, no signup.",
   "repository": {
     "url": "https://github.com/FieldmodeLLC/scrapecheck-mcp",
     "source": "github"
   },
-  "version": "0.2.0",
+  "version": "0.2.1",
   "remotes": [
     {
       "type": "streamable-http",
