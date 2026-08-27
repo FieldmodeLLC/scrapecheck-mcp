@@ -18,6 +18,9 @@ rail it already spends on: no API key, no signup, a free allowance
 before payment is required, and every verdict verifiable offline against
 our published key.
 
+Want to see a verdict before installing anything? One free check runs
+in the browser at scrapecheck.fly.dev.
+
 **Endpoint:** `https://scrapecheck-mcp.fly.dev/mcp` (streamable HTTP)
 **Payment:** x402 in-band (USDC on Base) — no API key, no signup. A free
 allowance per client identity is served before payment is required.
