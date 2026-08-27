@@ -21,6 +21,9 @@ our published key.
 Want to see a verdict before installing anything? One free check runs
 in the browser at scrapecheck.fly.dev.
 
+All four integration lanes (MCP, x402-native, Apify, plain HTTP), each
+with a tested snippet: [scrapecheck.fly.dev/integrations](https://scrapecheck.fly.dev/integrations)
+
 **Endpoint:** `https://scrapecheck-mcp.fly.dev/mcp` (streamable HTTP)
 **Payment:** x402 in-band (USDC on Base) — no API key, no signup. A free
 allowance per client identity is served before payment is required.
