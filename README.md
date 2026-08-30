@@ -1,6 +1,7 @@
 # ScrapeCheck MCP: the verification beat for agents that spend
 
 [![scrapecheck-mcp MCP server](https://glama.ai/mcp/servers/FieldmodeLLC/scrapecheck-mcp/badges/score.svg)](https://glama.ai/mcp/servers/FieldmodeLLC/scrapecheck-mcp)
+[![scrapecheck-mcp MCP server](https://glama.ai/mcp/servers/FieldmodeLLC/scrapecheck-mcp/badges/card.svg)](https://glama.ai/mcp/servers/FieldmodeLLC/scrapecheck-mcp)
 
 > **Here for the offline verifier?** It's in this repo:
 > [`tools/verify-verdict.mjs`](tools/verify-verdict.mjs) — one file, no
