@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "ScrapeCheck MCP storefront — signed verification of scraped web data as MCP tools (thin proxy over the ScrapeCheck origin).",
+  "description": "ScrapeCheck MCP storefront \u00e2\u20ac\u201d signed verification of scraped web data as MCP tools (thin proxy over the ScrapeCheck origin).",
   "scripts": {
     "start": "tsx src/main.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "start:stdio": "tsx src/stdio.ts"
   },
   "dependencies": {
     "@coinbase/x402": "^2.1.0",
