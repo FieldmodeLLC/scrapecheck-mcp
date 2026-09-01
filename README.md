@@ -97,6 +97,10 @@ you are charged only for completed work.
   field values, e.g. `{"price": "£51.77", "in_stock": true}`.
 - Scope (v1): server-rendered pages. Client-rendered (JS-only) content
   returns `unverifiable` — never a false `fail`, never a false `pass`.
+- Verification is of the moment: a pass means the claimed value was on the
+  page when we fetched it, not that the page itself is current. A page
+  carrying staleness signals can still pass when the claimed value is
+  genuinely present.
 - The same engine is also sold as a raw x402 HTTP API
   (`https://scrapecheck.fly.dev/verify`) and as the
   [Scrape QA Apify actor](https://apify.com/fieldmodellc/scrape-qa) for
