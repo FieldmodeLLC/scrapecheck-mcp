@@ -19,6 +19,32 @@
 import { createPublicKey, verify as edVerify, createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 
+// Every exit goes through exit(), never process.exit(). On Windows with
+// Node 24, process.exit() called after a fetch aborts with a libuv assertion
+// (UV_HANDLE_CLOSING) and a non-zero code, so a VALID verdict read as a
+// failure to any script branching on $?. exit() stops the flow by throwing
+// a sentinel; the handler below records the code and lets Node shut its
+// sockets down cleanly before the process ends.
+class ExitSignal extends Error {
+  constructor(code) {
+    super(`exit ${code}`);
+    this.code = code;
+  }
+}
+function exit(code) {
+  throw new ExitSignal(code);
+}
+const onEscape = (e) => {
+  if (e instanceof ExitSignal) {
+    process.exitCode = e.code;
+    return;
+  }
+  console.error(`INVALID: unexpected error: ${e instanceof Error ? e.message : String(e)}`);
+  process.exitCode = 1;
+};
+process.on("uncaughtException", onEscape);
+process.on("unhandledRejection", onEscape);
+
 const PUBKEY_URL = "https://scrapecheck.fly.dev/pubkey";
 
 function canonicalJson(value) {
@@ -41,14 +67,14 @@ function bindable(rec) {
 
 function fail(msg) {
   console.error(`INVALID: ${msg}`);
-  process.exit(1);
+  exit(1);
 }
 
 const args = process.argv.slice(2);
 const file = args[0];
 if (!file) {
   console.error("usage: verify-verdict.mjs <verdict.json|-> [--pubkey <ed25519:base64 | file>]");
-  process.exit(1);
+  exit(1);
 }
 
 const raw = file === "-" ? readFileSync(0, "utf-8") : readFileSync(file, "utf-8");
@@ -133,7 +159,7 @@ if (Array.isArray(verdict)) {
     }
   });
   console.log(`\n${verdict.length - bad}/${verdict.length} verified.${bad ? " TREAT THE FAILURES AS UNPROVEN." : ""}`);
-  process.exit(bad ? 1 : 0);
+  exit(bad ? 1 : 0);
 }
 
 {
@@ -246,11 +272,11 @@ if (matched.status === "retired") {
     } else if (rec.issued === false) {
       console.error(`  NOT ISSUED: ScrapeCheck has no record of issuing verdict_id ${verdict.verdict_id}.`);
       console.error(`              Signed by a retired (${matched.reason ?? "retired"}) key. TREAT AS FORGED.`);
-      process.exit(1);
+      exit(1);
     } else if (bindable(rec) && rec.signature_sha256 !== localHash) {
       console.error(`  CONTENT MISMATCH: that verdict_id was issued, but with DIFFERENT content.`);
       console.error(`              This is forged content under a real id. TREAT AS FORGED.`);
-      process.exit(1);
+      exit(1);
     } else if (bindable(rec)) {
       console.log(`  CONFIRMED:  issued by ScrapeCheck, content matches the issuer's record.`);
       console.log(`              (Signed before the key rotation; the retired key is expected here.)`);
@@ -274,4 +300,4 @@ if (matched.status === "retired") {
     }
   }
 }
-process.exit(0);
+exit(0);
