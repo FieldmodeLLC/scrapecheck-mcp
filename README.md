@@ -113,19 +113,22 @@ without trusting us, the transport, or this server:
 
 ```console
 $ node tools/verify-verdict.mjs examples/verdict.json
-(public key fetched from https://scrapecheck.fly.dev/pubkey — pass --pubkey to verify fully offline)
-VALID: signature verifies against the public key
+(2 keys fetched from https://scrapecheck.fly.dev/pubkey — pass --pubkey to verify fully offline)
+VALID: signature verifies (signed by k2, active)
   verdict:    pass (confidence 0.97)
-  verdict_id: 7af5f1df-1b86-42a5-a784-9b302a55f94e
+  verdict_id: 17aa1a39-0e3f-42a7-a3f4-3cbf664f9786
   check_type: web_field_v1
-  engine:     web_field_v1/0.2.0+2ae28205cac4
+  engine:     web_field_v1/0.2.1+6739b7f9ebf8
+  key_id:     k2 (envelope claim matches the verifying key)
+  issuer:     https://scrapecheck.fly.dev (embedded pointer; keys were checked against the pinned origin, never the embedded URL)
+  source_hash: sha256:b2025003076927098d4aaeeb2d7f41554299a8d6d68f060745b18a0527749bf8 — fingerprint of the normalized page text this verdict judged. Comparable between verdicts with the same engine digest; not independently recomputable today.
 $ echo $?
 0
 
 # flip a single field — "verdict": "pass" -> "fail" — and run it again
 $ node tools/verify-verdict.mjs tampered.json
-(public key fetched from https://scrapecheck.fly.dev/pubkey — pass --pubkey to verify fully offline)
-INVALID: signature does not verify — the verdict was altered or was not signed by this key
+(2 keys fetched from https://scrapecheck.fly.dev/pubkey — pass --pubkey to verify fully offline)
+INVALID: signature does not verify against any of the 2 published keys — the verdict was altered, or was not signed by this service
 $ echo $?
 1
 ```
